@@ -1,0 +1,214 @@
+.flower-petal-overlay {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 30;
+  contain: strict;
+}
+
+/* ── Shared: streams & sparks ─────────────────────────── */
+.flower-petal-overlay__stream,
+.flower-petal-overlay__spark {
+  position: absolute;
+  top: -10%;
+  opacity: 0;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* ── Petal stream (outer: controls vertical fall) ──────── */
+.flower-petal-overlay__stream {
+  left: var(--petal-left);
+  width: var(--petal-size);
+  height: calc(var(--petal-size) * 1.32);
+  animation: flower-petal-fall var(--fall-duration) cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+  animation-delay: var(--fall-delay);
+  contain: layout style;
+}
+
+/* ── Sway wrapper (horizontal drift) ──────────────────── */
+.flower-petal-overlay__sway {
+  display: block;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  animation: flower-petal-sway var(--drift-duration) cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* ── Petal visual (innermost: rotate + appearance) ─────── */
+.flower-petal-overlay__petal {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 68% 32% 62% 38% / 32% 68% 34% 66%;
+  background:
+    radial-gradient(circle at 28% 20%, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.3) 24%, transparent 42%),
+    linear-gradient(155deg, rgba(255, 255, 255, 0.28) 0%, transparent 30%),
+    linear-gradient(150deg, var(--petal-base) 0%, var(--petal-edge) 100%);
+  border: 1px solid rgba(255, 220, 232, 0.38);
+  box-shadow: 0 0 14px var(--petal-glow);
+  opacity: var(--petal-opacity);
+  transform: rotate(var(--rotate-start)) scale(var(--petal-scale));
+  transform-origin: 50% 18%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  animation: flower-petal-spin calc(var(--drift-duration) * 1.3) cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* Petal vein (center highlight) */
+.flower-petal-overlay__petal::after {
+  content: "";
+  position: absolute;
+  inset: 16% 46% 14% 46%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 170, 202, 0.2));
+  opacity: 0.6;
+  transform: rotate(8deg);
+}
+
+/* Petal sheen (top gloss) */
+.flower-petal-overlay__petal::before {
+  content: "";
+  position: absolute;
+  inset: 8% 12% 30% 10%;
+  border-radius: 68% 32% 62% 38% / 32% 68% 34% 66%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 78%);
+  opacity: 0.6;
+}
+
+/* ── Spark stream (outer: vertical fall) ───────────────── */
+.flower-petal-overlay__spark {
+  left: var(--spark-left);
+  width: var(--spark-size);
+  height: var(--spark-size);
+  animation: flower-spark-fall var(--spark-duration) cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+  animation-delay: var(--spark-delay);
+  contain: layout style;
+}
+
+/* ── Spark core (visual dot) ──────────────────────────── */
+.flower-petal-overlay__spark-core {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 243, 247, 0.7) 38%, rgba(255, 193, 218, 0.2) 68%, transparent 100%);
+  box-shadow: 0 0 8px rgba(255, 233, 241, 0.36);
+  opacity: var(--spark-opacity);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  animation: flower-spark-pulse calc(var(--spark-duration) * 0.46) cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* ══════════════════════════════════════════════════════════
+   KEYFRAMES — all use translate3d for compositor-only path
+   ══════════════════════════════════════════════════════════ */
+
+@keyframes flower-petal-fall {
+  0% {
+    transform: translate3d(0, -8vh, 0);
+    opacity: 0;
+  }
+  6% {
+    opacity: calc(var(--petal-opacity) * 0.5);
+  }
+  14% {
+    opacity: var(--petal-opacity);
+  }
+  82% {
+    opacity: var(--petal-opacity);
+  }
+  94% {
+    opacity: calc(var(--petal-opacity) * 0.3);
+  }
+  100% {
+    transform: translate3d(var(--fall-shift), 108vh, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes flower-petal-sway {
+  0% {
+    transform: translate3d(calc(var(--drift-distance) * -0.5), 0, 0);
+  }
+  25% {
+    transform: translate3d(calc(var(--drift-distance) * 0.3), 0, 0);
+  }
+  50% {
+    transform: translate3d(var(--drift-distance), 0, 0);
+  }
+  75% {
+    transform: translate3d(calc(var(--drift-distance) * -0.2), 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(var(--drift-distance) * -0.35), 0, 0);
+  }
+}
+
+@keyframes flower-petal-spin {
+  0% {
+    transform: rotate(var(--rotate-start)) scale(var(--petal-scale));
+  }
+  33% {
+    transform: rotate(var(--rotate-mid)) scale(calc(var(--petal-scale) * 0.98));
+  }
+  66% {
+    transform: rotate(var(--rotate-end)) scale(var(--petal-scale));
+  }
+  100% {
+    transform: rotate(var(--rotate-start)) scale(var(--petal-scale));
+  }
+}
+
+@keyframes flower-spark-fall {
+  0% {
+    transform: translate3d(0, -6vh, 0);
+    opacity: 0;
+  }
+  8% {
+    opacity: calc(var(--spark-opacity) * 0.4);
+  }
+  16% {
+    opacity: var(--spark-opacity);
+  }
+  84% {
+    opacity: var(--spark-opacity);
+  }
+  96% {
+    opacity: calc(var(--spark-opacity) * 0.2);
+  }
+  100% {
+    transform: translate3d(var(--spark-shift), 108vh, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes flower-spark-pulse {
+  0%,
+  100% {
+    transform: scale(0.82);
+    opacity: calc(var(--spark-opacity) * 0.6);
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: var(--spark-opacity);
+  }
+}
+
+/* ── Accessibility ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .flower-petal-overlay__stream,
+  .flower-petal-overlay__sway,
+  .flower-petal-overlay__petal,
+  .flower-petal-overlay__spark,
+  .flower-petal-overlay__spark-core {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

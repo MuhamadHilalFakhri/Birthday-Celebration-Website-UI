@@ -14,6 +14,7 @@ import {
   CelebrationMusicPlayer,
   type CelebrationMusicPlayerHandle,
 } from "./components/CelebrationMusicPlayer";
+import { FlowerPetalOverlay } from "./components/FlowerPetalOverlay";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -27,7 +28,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+    <div className="relative isolate min-h-screen overflow-x-hidden bg-background text-foreground">
+      {!showSplash && <FlowerPetalOverlay className="fixed inset-0 z-30" />}
       <CelebrationMusicPlayer
         ref={musicPlayerRef}
         isVisible={!showSplash}
@@ -43,7 +45,7 @@ export default function App() {
       </AnimatePresence>
 
       {!showSplash && (
-        <>
+        <div className="relative">
           <Navbar />
           <main>
             <HeroSection userName={userName} />
@@ -58,7 +60,7 @@ export default function App() {
             <SurpriseSection />
           </main>
           <Footer userName={userName} />
-        </>
+        </div>
       )}
     </div>
   );
