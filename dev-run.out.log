@@ -1,0 +1,33 @@
+
+  [32m[1mVITE[22m v6.3.5[39m  [2mready in [0m[1m525[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m4173[22m/[39m
+[2m19.26.26[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/App.tsx, /src/styles/index.css[22m
+[2m19.27.30[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/App.tsx, /src/styles/index.css[22m
+[2m19.27.30[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Navbar.tsx, /src/styles/index.css[22m
+[2m19.27.30[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Footer.tsx, /src/styles/index.css[22m
+[2m19.29.27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/HeroSection.tsx, /src/styles/index.css[22m
+[2m19.29.27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Footer.tsx, /src/styles/index.css[22m
+[2m19.29.27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m19.36.03[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/App.tsx, /src/styles/index.css[22m
+[2m19.44.28[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/D:\Birthday Celebration Website UI\src\app\components\CelebrationMusicPlayer.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/App.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Navbar.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/HeroSection.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Top10Section.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/GallerySection.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/TrailerSection.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/TimelineSection.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SurpriseSection.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Footer.tsx, /src/styles/index.css[22m
+[2m19.50.57[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/D:\Birthday Celebration Website UI\src\app\components\CelebrationMusicPlayer.tsx, /src/styles/index.css[22m
+[2m20.29.28[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/D:\Birthday Celebration Website UI\src\app\components\CelebrationMusicPlayer.tsx, /src/styles/index.css[22m
+[2m20.29.56[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/D:\Birthday Celebration Website UI\src\app\components\CelebrationMusicPlayer.tsx, /src/styles/index.css[22m
+[2m20.58.03[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/D:\Birthday Celebration Website UI\src\app\components\CelebrationMusicPlayer.tsx, /src/styles/index.css[22m
+[2m20.59.25[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/app/components/CelebrationMusicPlayer.tsx[22m
+[2m21.00.51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/D:\Birthday Celebration Website UI\src\app\components\CelebrationMusicPlayer.tsx, /src/styles/index.css[22m
+[2m21.05.33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/@fs/D:\Birthday Celebration Website UI\src\app\components\CelebrationMusicPlayer.tsx, /src/styles/index.css[22m
+[2m21.05.51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/TrailerSection.tsx, /src/styles/index.css[22m
+[2m21.05.58[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/App.tsx, /src/styles/index.css[22m

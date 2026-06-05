@@ -1,0 +1,9 @@
+[2m20.58.03[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "./components/CelebrationMusicPlayer" from "src/app/App.tsx". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/Birthday Celebration Website UI/src/app/App.tsx[39m:16:7
+[33m  30 |  import {
+  31 |    CelebrationMusicPlayer
+  32 |  } from "./components/CelebrationMusicPlayer";
+     |          ^
+  33 |  export default function App() {
+  34 |    _s();[39m

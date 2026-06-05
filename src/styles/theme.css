@@ -1,0 +1,211 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #fff5f8;
+  --foreground: #4a4a4a;
+  --card: #ffffff;
+  --card-foreground: #4a4a4a;
+  --popover: #ffffff;
+  --popover-foreground: #4a4a4a;
+  --primary: #ff90bb;
+  --primary-foreground: #5f2742;
+  --secondary: #ffc1da;
+  --secondary-foreground: #6c3550;
+  --muted: #ffeef4;
+  --muted-foreground: #7a7a7a;
+  --accent: #f8c8dc;
+  --accent-foreground: #6c3550;
+  --destructive: #d7729d;
+  --destructive-foreground: #ffffff;
+  --border: #ffd6e5;
+  --input: #ffd6e5;
+  --input-background: #ffffff;
+  --switch-background: #ffd6e5;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #ff90bb;
+  --chart-1: #ff90bb;
+  --chart-2: #ffb1cf;
+  --chart-3: #f8c8dc;
+  --chart-4: #ffd6e5;
+  --chart-5: #ffc1da;
+  --radius: 0.875rem;
+  --sidebar: #fff9fb;
+  --sidebar-foreground: #4a4a4a;
+  --sidebar-primary: #ff90bb;
+  --sidebar-primary-foreground: #5f2742;
+  --sidebar-accent: #ffe5ef;
+  --sidebar-accent-foreground: #6c3550;
+  --sidebar-border: #ffd6e5;
+  --sidebar-ring: #ff90bb;
+
+  --brand-hover: #ff7aad;
+  --soft-highlight: #ffe5ef;
+  --surface-soft: #fff9fb;
+  --surface-tint: #fff0f5;
+  --ink: #4a4a4a;
+  --ink-soft: #7a7a7a;
+  --ink-muted: #9d8b93;
+  --brand-shadow: rgba(255, 144, 187, 0.2);
+  --brand-shadow-strong: rgba(255, 144, 187, 0.34);
+  --overlay-soft: rgba(74, 74, 74, 0.12);
+  --overlay-strong: rgba(74, 74, 74, 0.2);
+}
+
+.dark {
+  --background: #fff5f8;
+  --foreground: #4a4a4a;
+  --card: #ffffff;
+  --card-foreground: #4a4a4a;
+  --popover: #ffffff;
+  --popover-foreground: #4a4a4a;
+  --primary: #ff90bb;
+  --primary-foreground: #5f2742;
+  --secondary: #ffc1da;
+  --secondary-foreground: #6c3550;
+  --muted: #ffeef4;
+  --muted-foreground: #7a7a7a;
+  --accent: #f8c8dc;
+  --accent-foreground: #6c3550;
+  --destructive: #d7729d;
+  --destructive-foreground: #ffffff;
+  --border: #ffd6e5;
+  --input: #ffd6e5;
+  --ring: #ff90bb;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #ff90bb;
+  --chart-2: #ffb1cf;
+  --chart-3: #f8c8dc;
+  --chart-4: #ffd6e5;
+  --chart-5: #ffc1da;
+  --sidebar: #fff9fb;
+  --sidebar-foreground: #4a4a4a;
+  --sidebar-primary: #ff90bb;
+  --sidebar-primary-foreground: #5f2742;
+  --sidebar-accent: #ffe5ef;
+  --sidebar-accent-foreground: #6c3550;
+  --sidebar-border: #ffd6e5;
+  --sidebar-ring: #ff90bb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-brand: var(--primary);
+  --color-brand-foreground: var(--primary-foreground);
+  --color-brand-hover: var(--brand-hover);
+  --color-soft-highlight: var(--soft-highlight);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-tint: var(--surface-tint);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-brand-shadow: var(--brand-shadow);
+  --color-brand-shadow-strong: var(--brand-shadow-strong);
+  --color-overlay-soft: var(--overlay-soft);
+  --color-overlay-strong: var(--overlay-strong);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at top left, rgba(255, 144, 187, 0.12), transparent 30%),
+      radial-gradient(circle at top right, rgba(255, 193, 218, 0.2), transparent 24%),
+      linear-gradient(180deg, #fff9fb 0%, #fff5f8 46%, #fff9fb 100%);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+
+  ::selection {
+    background: rgba(255, 144, 187, 0.28);
+    color: #4a4a4a;
+  }
+}

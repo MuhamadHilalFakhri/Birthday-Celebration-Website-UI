@@ -1,0 +1,45 @@
+
+  [32m[1mVITE[22m v6.3.5[39m  [2mready in [0m[1m1562[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m15.21.34[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m15.21.34[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m15.25.43[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m15.26.40[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/TrailerSection.tsx, /src/styles/index.css[22m
+[2m15.33.38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m15.33.38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/App.tsx, /src/styles/index.css[22m
+[2m15.33.38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/GallerySection.tsx, /src/styles/index.css[22m
+[2m15.33.38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/TrailerSection.tsx, /src/styles/index.css[22m
+[2m15.34.30[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m15.35.14[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m15.38.39[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/GallerySection.tsx, /src/styles/index.css[22m
+[2m15.42.38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m15.44.21[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m15.46.58[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m15.51.54[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Top10Section.tsx, /src/styles/index.css[22m
+[2m15.58.05[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m15.58.05[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Top10Section.tsx, /src/styles/index.css[22m
+[2m16.02.38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mflower/Index.html[22m
+[2m16.06.38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m16.08.12[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m16.14.09[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m16.18.33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m16.21.09[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m16.26.08[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m16.28.00[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m16.29.45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m16.34.17[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SplashScreen.tsx, /src/styles/index.css[22m
+[2m16.36.27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Top10Section.tsx, /src/styles/index.css[22m
+[2m16.38.01[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Top10Section.tsx, /src/styles/index.css[22m
+[2m16.40.35[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Top10Section.tsx, /src/styles/index.css[22m
+[2m16.40.39[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Top10Section.tsx, /src/styles/index.css[22m
+[2m16.40.40[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Top10Section.tsx, /src/styles/index.css[22m
+[2m16.40.51[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m16.43.15[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m16.43.40[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/Top10Section.tsx, /src/styles/index.css[22m
+[2m16.52.30[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/MemoryCarousel.tsx, /src/styles/index.css[22m
+[2m16.54.07[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SurpriseSection.tsx, /src/styles/index.css[22m
+[2m16.55.10[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SurpriseSection.tsx, /src/styles/index.css[22m
+[2m16.58.36[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SurpriseSection.tsx, /src/styles/index.css[22m
+[2m17.00.47[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/components/SurpriseSection.tsx, /src/styles/index.css[22m
