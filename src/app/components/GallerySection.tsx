@@ -13,6 +13,8 @@ interface Episode {
   title: string;
   description: string;
   date: string;
+  fileName: string;
+  thumbnailSrc: string;
   src: string;
 }
 
@@ -30,6 +32,9 @@ const getFileName = (path: string) => {
   const segments = path.split("/");
   return segments[segments.length - 1];
 };
+
+const getThumbnailSrc = (fileName: string) =>
+  `/video-thumbnails/${encodeURIComponent(`${fileName}.jpg`)}`;
 
 const extractDateLabel = (path: string) => {
   const match = path.match(/(\d{4}-\d{2}-\d{2})/);
@@ -51,14 +56,20 @@ const episodes: Episode[] = Object.entries(videoModules)
 
     return leftPath.localeCompare(rightPath);
   })
-  .map(([path, src], index) => ({
-    id: index + 1,
-    number: String(index + 1).padStart(2, "0"),
-    title: `Video Memory ${String(index + 1).padStart(2, "0")}`,
-    description: "Klik untuk membuka dan memutar video kenangan ini.",
-    date: extractDateLabel(path),
-    src,
-  }));
+  .map(([path, src], index) => {
+    const fileName = getFileName(path);
+
+    return {
+      id: index + 1,
+      number: String(index + 1).padStart(2, "0"),
+      title: `Video Memory ${String(index + 1).padStart(2, "0")}`,
+      description: "Klik untuk membuka dan memutar video kenangan ini.",
+      date: extractDateLabel(path),
+      fileName,
+      thumbnailSrc: getThumbnailSrc(fileName),
+      src,
+    };
+  });
 
 export function GallerySection({ onOpenVideo, onCloseVideo }: GallerySectionProps) {
   const [selectedEpisode, setSelectedEpisode] = useState<Episode | null>(null);
@@ -118,22 +129,21 @@ export function GallerySection({ onOpenVideo, onCloseVideo }: GallerySectionProp
                 onClick={() => openEpisode(episode)}
                 className="group relative h-64 cursor-pointer overflow-hidden rounded-[1.9rem] border border-border bg-gradient-to-br from-white via-surface-soft to-surface-tint text-left shadow-[0_20px_44px_rgba(255,144,187,0.12)] md:h-72"
               >
-                <video
-                  src={episode.src}
+                <img
+                  src={episode.thumbnailSrc}
+                  alt={episode.title}
                   className="absolute inset-0 h-full w-full object-cover"
-                  muted
-                  playsInline
-                  preload="metadata"
+                  loading="lazy"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileHover={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 1, scale: 1 }}
+                  whileHover={{ scale: 1.04 }}
                   className="absolute inset-0 flex items-center justify-center"
                 >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand shadow-[0_16px_30px_rgba(255,144,187,0.28)] opacity-0 transition-opacity group-hover:opacity-100">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand/95 shadow-[0_16px_30px_rgba(255,144,187,0.28)] transition-transform group-hover:scale-105">
                     <Play className="ml-1 h-8 w-8 fill-brand-foreground text-brand-foreground" />
                   </div>
                 </motion.div>
