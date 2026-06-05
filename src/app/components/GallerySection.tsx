@@ -107,9 +107,6 @@ export function GallerySection({ onOpenVideo, onCloseVideo }: GallerySectionProp
         >
           Featured Episodes of Your Life
         </motion.h2>
-        <p className="mb-6 max-w-2xl text-sm leading-relaxed text-ink-soft md:text-base">
-          Semua video dari folder `MediaWeb` sekarang tampil di section ini dan bisa diputar saat diklik.
-        </p>
 
         {episodes.length === 0 ? (
           <div className="rounded-[1.9rem] border border-dashed border-border bg-white/70 p-6 text-sm text-ink-soft">

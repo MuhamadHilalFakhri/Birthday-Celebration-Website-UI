@@ -1,11 +1,51 @@
-import { motion } from "motion/react";
-import { Play, Plus, Heart } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
 interface HeroSectionProps {
   userName: string;
 }
 
+interface FloatingLove {
+  id: number;
+  delay: number;
+  driftX: number;
+  duration: number;
+  rotate: number;
+  size: number;
+}
+
+const LOVE_ICON_SRC = "/love-svgrepo-com.svg";
+
 export function HeroSection({ userName }: HeroSectionProps) {
+  const [floatingLoves, setFloatingLoves] = useState<FloatingLove[]>([]);
+  const timeoutIdsRef = useRef<number[]>([]);
+
+  useEffect(() => {
+    return () => {
+      timeoutIdsRef.current.forEach((timeoutId) => window.clearTimeout(timeoutId));
+    };
+  }, []);
+
+  const showLoveBurst = () => {
+    const burst = Array.from({ length: 18 }, (_, index) => ({
+      id: Date.now() + index + Math.floor(Math.random() * 1000),
+      delay: index * 0.04,
+      driftX: (Math.random() - 0.5) * 260,
+      duration: 1.8 + Math.random() * 0.8,
+      rotate: (Math.random() - 0.5) * 70,
+      size: 24 + Math.random() * 24,
+    }));
+
+    const burstIds = burst.map((item) => item.id);
+    setFloatingLoves((current) => [...current, ...burst]);
+
+    const timeoutId = window.setTimeout(() => {
+      setFloatingLoves((current) => current.filter((item) => !burstIds.includes(item.id)));
+    }, 3200);
+
+    timeoutIdsRef.current.push(timeoutId);
+  };
+
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
@@ -30,7 +70,7 @@ export function HeroSection({ userName }: HeroSectionProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="rounded-[2rem] border border-border bg-white/82 p-6 text-center shadow-[0_28px_70px_rgba(255,144,187,0.18)] backdrop-blur-xl sm:p-8 md:p-12 md:text-left"
+          className="relative rounded-[2rem] border border-border bg-white/82 p-6 text-center shadow-[0_28px_70px_rgba(255,144,187,0.18)] backdrop-blur-xl sm:p-8 md:p-12 md:text-left"
         >
           {/* Main Headline */}
           <motion.h1
@@ -75,23 +115,41 @@ export function HeroSection({ userName }: HeroSectionProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1 }}
-            className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4"
+            className="relative flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4"
           >
+            <AnimatePresence>
+              {floatingLoves.map((love) => (
+                <motion.img
+                  key={love.id}
+                  src={LOVE_ICON_SRC}
+                  alt=""
+                  initial={{ opacity: 0, x: 0, y: 10, scale: 0.5, rotate: 0 }}
+                  animate={{
+                    opacity: [0, 1, 1, 0],
+                    x: love.driftX,
+                    y: -180 - Math.random() * 90,
+                    scale: [0.5, 1, 1.08, 0.88],
+                    rotate: love.rotate,
+                  }}
+                  exit={{ opacity: 0, scale: 0.6 }}
+                  transition={{ delay: love.delay, duration: love.duration, ease: "easeOut" }}
+                  className="pointer-events-none absolute left-1/2 top-5 z-20"
+                  style={{
+                    width: `${love.size}px`,
+                    height: `${love.size}px`,
+                    marginLeft: `${-love.size / 2}px`,
+                  }}
+                />
+              ))}
+            </AnimatePresence>
+
             <button
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-base text-brand-foreground shadow-[0_18px_36px_rgba(255,144,187,0.3)] transition-all hover:scale-105 hover:bg-brand-hover sm:w-auto md:px-8 md:py-4 md:text-lg"
+              type="button"
+              onClick={showLoveBurst}
+              className="flex w-full items-center justify-center gap-3 rounded-full bg-brand px-6 py-3 text-base text-brand-foreground shadow-[0_18px_36px_rgba(255,144,187,0.3)] transition-all hover:scale-105 hover:bg-brand-hover sm:w-auto md:px-8 md:py-4 md:text-lg"
             >
-              <Play className="w-5 h-5 fill-brand-foreground" />
-              Play Celebration
-            </button>
-
-            <button className="flex w-full items-center justify-center gap-2 rounded-full border border-border bg-white px-6 py-3 text-base text-ink shadow-[0_14px_30px_rgba(255,144,187,0.12)] transition-colors hover:bg-soft-highlight sm:w-auto md:px-8 md:py-4 md:text-lg">
-              <Plus className="w-5 h-5" />
-              Add to Memories
-            </button>
-
-            <button className="flex w-full items-center justify-center gap-2 rounded-full border border-border bg-surface-soft px-6 py-3 text-base text-ink shadow-[0_14px_30px_rgba(255,144,187,0.12)] transition-colors hover:bg-soft-highlight sm:w-auto md:px-8 md:py-4 md:text-lg">
-              <Heart className="w-5 h-5" />
-              Send Wishes
+              <img src={LOVE_ICON_SRC} alt="" className="h-5 w-5" />
+              Send Whishes
             </button>
           </motion.div>
         </motion.div>
