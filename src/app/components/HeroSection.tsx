@@ -8,7 +8,11 @@ interface HeroSectionProps {
 interface FloatingLove {
   id: number;
   delay: number;
-  driftX: number;
+  startX: number;
+  midX: number;
+  endX: number;
+  midY: number;
+  endY: number;
   duration: number;
   rotate: number;
   size: number;
@@ -27,14 +31,24 @@ export function HeroSection({ userName }: HeroSectionProps) {
   }, []);
 
   const showLoveBurst = () => {
-    const burst = Array.from({ length: 18 }, (_, index) => ({
-      id: Date.now() + index + Math.floor(Math.random() * 1000),
-      delay: index * 0.04,
-      driftX: (Math.random() - 0.5) * 260,
-      duration: 1.8 + Math.random() * 0.8,
-      rotate: (Math.random() - 0.5) * 70,
-      size: 24 + Math.random() * 24,
-    }));
+    const burst = Array.from({ length: 34 }, (_, index) => {
+      const direction = index % 2 === 0 ? -1 : 1;
+      const spreadBase = 120 + Math.random() * 220;
+      const endSpread = 220 + Math.random() * 360;
+
+      return {
+        id: Date.now() + index + Math.floor(Math.random() * 1000),
+        delay: index * 0.025,
+        startX: (Math.random() - 0.5) * 110,
+        midX: direction * spreadBase + (Math.random() - 0.5) * 70,
+        endX: direction * endSpread + (Math.random() - 0.5) * 90,
+        midY: -110 - Math.random() * 80,
+        endY: -260 - Math.random() * 220,
+        duration: 2.6 + Math.random() * 1.1,
+        rotate: direction * (30 + Math.random() * 85),
+        size: 22 + Math.random() * 26,
+      };
+    });
 
     const burstIds = burst.map((item) => item.id);
     setFloatingLoves((current) => [...current, ...burst]);
@@ -123,17 +137,27 @@ export function HeroSection({ userName }: HeroSectionProps) {
                   key={love.id}
                   src={LOVE_ICON_SRC}
                   alt=""
-                  initial={{ opacity: 0, x: 0, y: 10, scale: 0.5, rotate: 0 }}
+                  initial={{
+                    opacity: 0,
+                    x: love.startX,
+                    y: 18,
+                    scale: 0.45,
+                    rotate: 0,
+                  }}
                   animate={{
-                    opacity: [0, 1, 1, 0],
-                    x: love.driftX,
-                    y: -180 - Math.random() * 90,
-                    scale: [0.5, 1, 1.08, 0.88],
+                    opacity: [0, 0.95, 0.9, 0],
+                    x: [love.startX, love.midX, love.endX],
+                    y: [18, love.midY, love.endY],
+                    scale: [0.45, 1, 1.08, 0.82],
                     rotate: love.rotate,
                   }}
                   exit={{ opacity: 0, scale: 0.6 }}
-                  transition={{ delay: love.delay, duration: love.duration, ease: "easeOut" }}
-                  className="pointer-events-none absolute left-1/2 top-5 z-20"
+                  transition={{
+                    delay: love.delay,
+                    duration: love.duration,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="pointer-events-none absolute left-1/2 top-8 z-20 will-change-transform"
                   style={{
                     width: `${love.size}px`,
                     height: `${love.size}px`,
