@@ -21,12 +21,14 @@ const flowerIntroDoc = `
       ${flowerCss}
 
       .flowers {
+        transform-origin: center bottom;
         transform: scale(0.92);
       }
 
       @media (max-width: 768px) {
         .flowers {
-          transform: scale(0.82);
+          transform-origin: center bottom;
+          transform: translateY(-10vh) scale(1.42);
         }
       }
     </style>
