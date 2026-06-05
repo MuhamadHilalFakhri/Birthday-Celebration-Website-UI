@@ -12,9 +12,6 @@ export function TrailerSection() {
         >
           One More Sweet Pause
         </motion.h2>
-        <p className="mx-auto mb-8 max-w-2xl text-center text-sm leading-relaxed text-ink-soft md:text-base">
-          Semua video sudah dipindahkan ke section `Featured Episodes of Your Life`, jadi bagian ini tetap jadi jeda manis sebelum kejutan terakhir.
-        </p>
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -23,9 +20,6 @@ export function TrailerSection() {
         >
           <p className="text-sm tracking-[0.22em] text-brand">BIRTHDAY MOMENT</p>
           <h3 className="mt-3 text-2xl text-ink md:text-3xl">Cerita utamanya ada di atas</h3>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-ink-soft md:text-base">
-            Scroll kembali ke `Featured Episodes of Your Life` kalau ingin memutar video kenangan, lalu lanjut ke surprise section untuk penutupnya.
-          </p>
         </motion.div>
       </div>
     </section>
