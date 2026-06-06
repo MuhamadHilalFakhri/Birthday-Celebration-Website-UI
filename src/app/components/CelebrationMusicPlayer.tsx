@@ -4,6 +4,7 @@ import { ChevronDown, ChevronUp, Disc3, Music4, Pause, Play, SkipForward, Volume
 
 import rayuanPerempuanGilaSrc from "../music/Nadin Amizah - Rayuan Perempuan Gila.mp3";
 import semuaAkuDirayakanSrc from "../music/Nadin Amizah - Semua Aku Dirayakan.mp3";
+import kekalSrc from "../music/Nadin Amizah - Kekal.mp3";
 import fotoKitaBlurSrc from "../music/Sal Priadi - Foto kita blur.mp3";
 
 interface SongDefinition {
@@ -31,6 +32,11 @@ const SONGS: SongDefinition[] = [
     title: "Rayuan Perempuan Gila",
     subtitle: "Nadin Amizah",
     src: rayuanPerempuanGilaSrc,
+  },
+  {
+    title: "Kekal",
+    subtitle: "Nadin Amizah",
+    src: kekalSrc,
   },
   {
     title: "Foto Kita Blur",

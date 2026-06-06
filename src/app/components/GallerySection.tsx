@@ -3,8 +3,8 @@ import { useState } from "react";
 import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 interface GallerySectionProps {
-  onOpenVideo?: () => void;
-  onCloseVideo?: () => void;
+  onVideoPlay?: () => void;
+  onVideoStop?: () => void;
 }
 
 interface Episode {
@@ -71,17 +71,16 @@ const episodes: Episode[] = Object.entries(videoModules)
     };
   });
 
-export function GallerySection({ onOpenVideo, onCloseVideo }: GallerySectionProps) {
+export function GallerySection({ onVideoPlay, onVideoStop }: GallerySectionProps) {
   const [selectedEpisode, setSelectedEpisode] = useState<Episode | null>(null);
 
   const openEpisode = (episode: Episode) => {
     setSelectedEpisode(episode);
-    onOpenVideo?.();
   };
 
   const closeEpisode = () => {
     setSelectedEpisode(null);
-    onCloseVideo?.();
+    onVideoStop?.();
   };
 
   const nextEpisode = () => {
@@ -212,6 +211,9 @@ export function GallerySection({ onOpenVideo, onCloseVideo }: GallerySectionProp
                   controls
                   autoPlay
                   playsInline
+                  onPlay={onVideoPlay}
+                  onPause={onVideoStop}
+                  onEnded={onVideoStop}
                 />
               </div>
 

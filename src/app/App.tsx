@@ -18,7 +18,7 @@ import { FlowerPetalOverlay } from "./components/FlowerPetalOverlay";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
-  const [isTrailerOpen, setIsTrailerOpen] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const userName = "Faisha Auditha"; // You can customize this name
   const musicPlayerRef = useRef<CelebrationMusicPlayerHandle>(null);
 
@@ -33,7 +33,7 @@ export default function App() {
       <CelebrationMusicPlayer
         ref={musicPlayerRef}
         isVisible={!showSplash}
-        isVideoActive={isTrailerOpen}
+        isVideoActive={isVideoPlaying}
       />
       <AnimatePresence>
         {showSplash && (
@@ -52,8 +52,8 @@ export default function App() {
             <MemoryCarousel />
             <Top10Section />
             <GallerySection
-              onOpenVideo={() => setIsTrailerOpen(true)}
-              onCloseVideo={() => setIsTrailerOpen(false)}
+              onVideoPlay={() => setIsVideoPlaying(true)}
+              onVideoStop={() => setIsVideoPlaying(false)}
             />
             <TimelineSection />
             <TrailerSection />

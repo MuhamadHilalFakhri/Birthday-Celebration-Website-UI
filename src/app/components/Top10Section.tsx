@@ -32,9 +32,41 @@ const excludedTopReasonPhotos = new Set([
   "./foto/d16189af-555c-4f90-aa13-2cea8b2faa43 (1).jpg",
 ]);
 
+const prioritizedTopReasonPhotos = [
+  "./foto/WhatsApp Image 2026-06-06 at 22.32.34.jpeg",
+  "./foto/WhatsApp Image 2026-06-06 at 22.32.50.jpeg",
+  "./foto/WhatsApp Image 2026-06-06 at 22.32.51.jpeg",
+  "./foto/WhatsApp Image 2026-06-06 at 22.32.52.jpeg",
+];
+
+function hashString(value: string) {
+  let hash = 0;
+
+  for (let index = 0; index < value.length; index += 1) {
+    hash = (hash * 31 + value.charCodeAt(index)) >>> 0;
+  }
+
+  return hash;
+}
+
+const shuffledPrioritizedTopReasonPhotos = [...prioritizedTopReasonPhotos].sort(
+  (leftPath, rightPath) => hashString(leftPath) - hashString(rightPath),
+);
+
 const topReasonPhotos = Object.entries(photoModules)
-  .sort(([leftPath], [rightPath]) => leftPath.localeCompare(rightPath))
   .filter(([path]) => !excludedTopReasonPhotos.has(path))
+  .sort(([leftPath], [rightPath]) => {
+    const leftPriority = shuffledPrioritizedTopReasonPhotos.indexOf(leftPath);
+    const rightPriority = shuffledPrioritizedTopReasonPhotos.indexOf(rightPath);
+
+    if (leftPriority !== -1 || rightPriority !== -1) {
+      if (leftPriority === -1) return 1;
+      if (rightPriority === -1) return -1;
+      return leftPriority - rightPriority;
+    }
+
+    return leftPath.localeCompare(rightPath);
+  })
   .map(([, src]) => src);
 
 export function Top10Section() {
